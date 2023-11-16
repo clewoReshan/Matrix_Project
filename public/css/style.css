@@ -1,0 +1,448 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  box-shadow: 0px -7px 13px 0px;
+  padding: 5px 40px;
+}
+.navbar .img {
+  flex: 1;
+}
+.navbar .nav_text {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.navbar .nav_text .pages {
+  font-family: Lexend;
+  font-weight: 600;
+}
+.navbar .nav_text .call {
+  background-color: #000;
+  padding: 10px 30px;
+  border-radius: 8px;
+  color: #fff;
+  font-family: Lexend;
+  font-weight: 700;
+}
+.navbar .nav_text .menu {
+  display: none;
+}
+
+.footer {
+  position: relative;
+  height: 350px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer .logo {
+  flex: 1;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer .content_container {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: column;
+  flex: 2;
+}
+.footer .content_container .content {
+  color: rgba(255, 255, 255, 0.5019607843);
+  font-family: Lexend;
+  font-weight: 300;
+}
+.footer .content_container .email,
+.footer .content_container .number {
+  color: #fff;
+  font-family: Lexend;
+  font-weight: 600;
+}
+.footer .abouts {
+  flex: 2;
+  color: #fff;
+  height: 80%;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.footer .abouts .pages {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.footer .abouts .pages span {
+  color: rgba(255, 255, 255, 0.5019607843);
+  font-family: Lexend;
+  font-weight: 400;
+}
+.footer .abouts .platforms {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.footer .abouts .platforms span {
+  color: rgba(255, 255, 255, 0.5019607843);
+  font-family: Lexend;
+  font-weight: 400;
+}
+
+.hero_sec {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  width: 70%;
+  margin: auto;
+}
+.hero_sec .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+}
+.hero_sec .content .hero_text {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.hero_sec .content .hero_text h2 {
+  font-family: Lexend;
+  font-size: 60px;
+  font-weight: 700;
+  list-style: 80px;
+}
+.hero_sec .content .hero_text p {
+  font-family: Lexend;
+  font-size: 20px;
+  font-weight: 400;
+  list-style: 32px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-top: 5%;
+}
+.hero_sec .content .hero_text button {
+  background-color: #000;
+  padding: 10px 30px;
+  border-radius: 8px;
+  color: #fff;
+  font-family: Lexend;
+  font-weight: 700;
+  border: none;
+  margin-top: 5%;
+  cursor: pointer;
+}
+.hero_sec .content .hero_text button:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+  font-family: Lexend;
+  font-weight: 700;
+}
+.hero_sec .content .hero_img {
+  width: 95%;
+  height: 100%;
+}
+.hero_sec .content .hero_img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  padding: 50px 0;
+}
+.wrapper .title {
+  font-weight: 400;
+  font-size: 40px;
+  font-family: Lexend;
+  color: #fff;
+}
+.wrapper .container {
+  width: 70%;
+  margin: auto;
+  list-style: none;
+}
+.wrapper .container .box {
+  width: 100%;
+  height: auto;
+  margin: 25px 0;
+  padding: 14px;
+  background: transparent;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.wrapper .container .box .question {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  width: 100%;
+  cursor: pointer;
+  border-bottom: 1px solid #fff;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: Lexend;
+  color: #fff;
+  padding: 2%;
+}
+.wrapper .container .box .answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s linear;
+}
+.wrapper .container .box .answer.active {
+  max-height: 255px;
+}
+.wrapper .container .box .answer__text {
+  color: rgba(255, 255, 255, 0.5019607843);
+  font-family: Lexend;
+  font-weight: 300;
+  margin: 15px 10px;
+}
+.wrapper .container .box .answer button {
+  margin: 10px 10px;
+  background-color: #fff;
+  padding: 10px 30px;
+  border-radius: 8px;
+  color: #000;
+  font-family: Lexend;
+  font-weight: 700;
+  border: none;
+}
+.wrapper .container .box .answer button:hover {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  font-family: Lexend;
+  font-weight: 700;
+}
+
+.portfolio {
+  background-color: #fff;
+  margin-top: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.portfolio .title {
+  width: 70%;
+  text-align: center;
+  font-family: Lexend;
+  font-size: 40px;
+  font-weight: 700;
+}
+.portfolio .content_container {
+  width: 80%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 150px 0 0px 0;
+}
+.portfolio .content_container .content {
+  position: relative;
+  flex-basis: 33%;
+  height: 350px;
+  margin-bottom: 5%;
+  transition: transform 1s ease;
+}
+.portfolio .content_container .content .img {
+  width: 100%;
+  height: 90%;
+  background-color: gainsboro;
+}
+.portfolio .content_container .content .title_descr {
+  margin-top: 2%;
+}
+.portfolio .content_container .content .title_descr .title {
+  color: rgba(0, 0, 0, 0.6980392157);
+  font-family: Lexend;
+  font-size: 28px;
+  font-weight: 700;
+}
+.portfolio .content_container .content .title_descr .description {
+  color: rgba(0, 0, 0, 0.6980392157);
+  font-family: Lexend;
+  font-size: 20px;
+  font-weight: 400;
+}
+.portfolio .content.animate-up {
+  transform: translateY(-30%);
+}
+
+.Testimonials {
+  background-color: #000;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.Testimonials .title {
+  margin-top: 5%;
+  color: #fff;
+  width: 70%;
+  text-align: center;
+  font-family: Lexend;
+  font-size: 40px;
+  font-weight: 700;
+}
+.Testimonials .content_container {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 50px 0;
+}
+.Testimonials .content_container .content {
+  position: relative;
+  flex-basis: 31%;
+  height: 300px;
+  margin-bottom: 5%;
+}
+.Testimonials .content_container .content .img {
+  width: 100%;
+  height: 90%;
+  background-color: #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.letsTalk {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 100px;
+}
+.letsTalk .text {
+  width: 80%;
+  font-family: Lexend;
+  font-size: 30px;
+  font-weight: 500;
+}
+.letsTalk button {
+  background-color: #000;
+  padding: 10px 30px;
+  border-radius: 8px;
+  color: #fff;
+  font-family: Lexend;
+  font-weight: 700;
+  border: none;
+  margin-top: 5%;
+  cursor: pointer;
+}
+.letsTalk button:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+  font-family: Lexend;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 767px) {
+  .navbar .nav_text {
+    justify-content: flex-end;
+  }
+  .navbar .nav_text .pages {
+    display: none;
+  }
+  .navbar .nav_text .call {
+    display: none;
+  }
+  .navbar .nav_text .menu {
+    display: block;
+  }
+  .footer {
+    height: 600px;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .footer .content_container {
+    width: 80%;
+  }
+  .footer .abouts {
+    width: 80%;
+  }
+  .hero_sec {
+    margin-top: 50px;
+    height: auto;
+    width: 100%;
+  }
+  .hero_sec .content {
+    flex-direction: column;
+  }
+  .hero_sec .content .hero_img {
+    width: 90%;
+    margin-top: 5%;
+  }
+  .portfolio .title {
+    width: 90%;
+    font-size: 30px;
+    font-weight: 600;
+  }
+  .portfolio .content_container .content {
+    flex-basis: 100%;
+  }
+  .portfolio .content_container .content:nth-child(4),
+  .portfolio .content_container .content:nth-child(5),
+  .portfolio .content_container .content:nth-child(6),
+  .portfolio .content_container .content:nth-child(7),
+  .portfolio .content_container .content:nth-child(8),
+  .portfolio .content_container .content:nth-child(9) {
+    display: none;
+  }
+  .Testimonials .title {
+    width: 90%;
+    font-size: 30px;
+    font-weight: 600;
+  }
+  .Testimonials .content_container .content {
+    flex-basis: 100%;
+  }
+  .Testimonials .content_container .content:nth-child(2),
+  .Testimonials .content_container .content:nth-child(3) {
+    display: none;
+  }
+  .letsTalk {
+    width: 100%;
+    padding: 100px 20px;
+  }
+}/*# sourceMappingURL=style.css.map */
