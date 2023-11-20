@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Matrix</title>
-    <link rel="icon" href="{{ asset('img/Logo.png') }}">
+    <link rel="icon" href="img/logo_white.png">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="https://kit.fontawesome.com/6e8a2ac668.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-HS6r7ie0J5yfnjJIGT+E0spXaJhGFBV3OviCvB9eWR/hPX5kD2ikOhOww3OjcvLp/JdMnjmtz/GVXoy/ANwjJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -39,30 +39,33 @@
 
     {{-- footer --}}
     <div class="footer">
-        <div class="logo">
-            <img src="{{ asset('img/Logo.png') }}" alt="Matrix Logo">
-        </div>
-        <div class="content_container">
-            <span class="content">Matrix is where your imagination and our expertise converge to create design solutions
-                that elevate your brand and set you apart from the competition.</span>
-            <span class="email">hello@matrix.com</span>
-            <span class="number">+1-800-123 4567</span>
-            <span class="content">Copyright © 2023 Matrix®. All rights reserved.</span>
-        </div>
-        <div class="abouts">
-            <div class="pages">
-                <span>Home</span>
-                <span>Services</span>
-                <span>Portfolio</span>
-                <span>Schedule a Call</span>
+        <div class="footer_container_main">
+            <div class="logo_footer">
+                <img src="{{ asset('img/logo_white.png') }}" alt="Matrix Logo">
             </div>
-            <div class="platforms">
-                <span>Facebook</span>
-                <span>Twitter</span>
-                <span>LinkedIn</span>
-                <span>Instergram</span>
-                <span>Dribble</span>
+            <div class="content_container_footer">
+                <span class="footerContent">Matrix is where your imagination and our expertise converge to create design solutions
+                    that elevate your brand and set you apart from the competition.</span>
+                <span class="email_footer">hello@matrix.com</span>
+                <span class="phone_footer">+1-800-123 4567</span>
+                <span class="desktop_copyrights">Copyright © 2023 Matrix®. All rights reserved.</span>
             </div>
+            <div class="abouts_footer">
+                <div class="pages">
+                    <span>Home</span>
+                    <span>Services</span>
+                    <span>Portfolio</span>
+                    <span>Schedule a Call</span>
+                </div>
+                <div class="platforms">
+                    <span>Facebook</span>
+                    <span>Twitter</span>
+                    <span>LinkedIn</span>
+                    <span>Instergram</span>
+                    <span>Dribble</span>
+                </div>
+            </div>
+            <span class="mobile_copyrights">Copyright © 2023 Matrix®. All rights reserved.</span>
         </div>
     </div>
 
@@ -119,27 +122,39 @@
         });
 
 
-        // this is for home page testimonial animation
-        document.addEventListener('DOMContentLoaded', function() {
-            var boxes = document.querySelectorAll('.content');
+        function animateIntersections(className) {
+            const elementToAnimate = document.querySelectorAll(className)
 
-            // Function to add animation class when scrolled
-            function handleScroll() {
-                boxes.forEach(function(box) {
-                    var boxTop = box.offsetTop;
-                    var scrollPosition = window.scrollY;
+            function handleIntersection(entries, observer) {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const block = entry.target;
+                        const delay = block.getAttribute('data-delay');
+                        setTimeout(() => {
+                            block.classList.add('in-viewport');
+                            setTimeout(() => {
+                                block.classList.add('loaded');
+                            }, 1000);
+                        }, delay);
 
-                    if (scrollPosition > boxTop - window.innerHeight) {
-                        box.classList.add('animate-up');
-                    } else {
-                        box.classList.remove('animate-up');
+                        observer.unobserve(block);
                     }
                 });
             }
 
-            // Listen for scroll events
-            window.addEventListener('scroll', handleScroll);
-        });
+            const options = {
+                root: null,
+                threshold: 0.1,
+            };
+            const observer = new IntersectionObserver(handleIntersection, options);
+
+            elementToAnimate.forEach((block) => {
+                observer.observe(block);
+            });
+        }
+        animateIntersections('.animationsGlobal_Herizontal_left');
+        animateIntersections('.animationsGlobal_Herizontal_right');
+        animateIntersections('.animationsGlobal_Vertical');
     </script>
 </body>
 
