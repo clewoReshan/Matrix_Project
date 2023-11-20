@@ -9,29 +9,27 @@
     <link rel="icon" href="{{ asset('img/Logo.png') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="https://kit.fontawesome.com/6e8a2ac668.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-        integrity="sha512-HS6r7ie0J5yfnjJIGT+E0spXaJhGFBV3OviCvB9eWR/hPX5kD2ikOhOww3OjcvLp/JdMnjmtz/GVXoy/ANwjJQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
-        integrity="sha512-GvkJ1TyTBkXwqfKxG2l3mKF6G4Lp1X7IzViC8X+zhrngR9vD2Ij2KDMt+GzQMc66yKuK6Lb8LE1vjXDvIuwhXw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-HS6r7ie0J5yfnjJIGT+E0spXaJhGFBV3OviCvB9eWR/hPX5kD2ikOhOww3OjcvLp/JdMnjmtz/GVXoy/ANwjJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-GvkJ1TyTBkXwqfKxG2l3mKF6G4Lp1X7IzViC8X+zhrngR9vD2Ij2KDMt+GzQMc66yKuK6Lb8LE1vjXDvIuwhXw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
 
 <body>
     {{-- header --}}
     <div class="navbar">
-        <div class="img">
-            <img src="{{ asset('img/Logo.png') }}" alt="Matrix Logo">
-        </div>
-        <div class="nav_text">
-            <span class="pages">Home</span>
-            <span class="pages">About Us</span>
-            <span class="pages">Portfolio</span>
-            <span class="call">Schedule a Call</span>
-            <span class="menu">
-                <i class="fa-solid fa-bars"></i>
-            </span>
+        <div class="navContentWrapper">
+            <div class="img">
+                <img src="{{ asset('img/Logo.png') }}" alt="Matrix Logo">
+            </div>
+            <div class="nav_text">
+                <span class="pages">Home</span>
+                <span class="pages">About Us</span>
+                <span class="pages">Portfolio</span>
+                <span class="call">Schedule a Call</span>
+                <span class="menu">
+                    <i class="fa-solid fa-bars"></i>
+                </span>
+            </div>
         </div>
     </div>
     {{-- content --}}
@@ -85,7 +83,7 @@
                             behavior: 'smooth',
                             block: 'start', // or 'end', 'center', 'nearest'
                             inline: 'nearest', // or 'start', 'end', 'center', 'nearest'
-                            duration: 5000 
+                            duration: 5000
                         });
                     }
                 });
