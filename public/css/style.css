@@ -630,7 +630,7 @@
 .portfolio_wrapper .portfolio_navSlider {
   width: 50%;
   margin: auto;
-  padding: 40px 0 80px;
+  padding: 40px 0;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -645,13 +645,42 @@
   font-weight: 400;
   line-height: 18px;
   text-align: left;
+  cursor: pointer;
 }
 .portfolio_wrapper .portfolio_navSlider .navSlide.active, .portfolio_wrapper .portfolio_navSlider .navSlide:hover {
   background: #000;
   color: #fff;
   border: 1px solid black;
+}
+.portfolio_wrapper .portfolio_navSlider .navSlide:hover {
   transition: all 0.2s ease-in-out;
 }
+.portfolio_wrapper .mobileSlidingNav {
+  display: none;
+}
+.portfolio_wrapper .portfolio_content {
+  width: 100%;
+  margin: auto;
+  padding: 30px 0 80px;
+  display: flex;
+  grid-row-gap: 50px;
+  flex-wrap: wrap;
+}
+.portfolio_wrapper .portfolio_content .cardContainer__portfolio {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0;
+}
+.portfolio_wrapper .portfolio_content .cardContainer__portfolio .portfolio_card {
+  background: #000;
+  width: 28%;
+  height: 470px;
+  margin: 0;
+}
+
 @media screen and (max-width: 767px) {
   .navbar .nav_text {
     justify-content: flex-end;
@@ -911,6 +940,51 @@
   .about_hero_sec .content .hero_img {
     width: 100%;
     margin-top: 30px;
+  }
+  .portfolio_hero {
+    width: 90%;
+    padding: 35px 0 20px;
+    justify-content: center;
+  }
+  .portfolio_hero .heroTitle {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 60px;
+  }
+  .portfolio_wrapper {
+    width: 90%;
+  }
+  .portfolio_wrapper .title_portfolio {
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+  }
+  .portfolio_wrapper .desktopNav_portfolio {
+    display: none;
+  }
+  .portfolio_wrapper .mobileSlidingNav {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 30px 0;
+  }
+  .portfolio_wrapper .mobileSlidingNav .slick-track {
+    padding: 0 20px;
+  }
+  .portfolio_wrapper .mobileSlidingNav .navSlide {
+    margin: 0 20px;
+  }
+  .portfolio_wrapper .portfolio_content {
+    padding: 0px 0 60px;
+    grid-row-gap: 16px;
+  }
+  .portfolio_wrapper .portfolio_content .cardContainer__portfolio {
+    flex-direction: column;
+    grid-row-gap: 16px;
+  }
+  .portfolio_wrapper .portfolio_content .cardContainer__portfolio .portfolio_card {
+    width: 100%;
+    height: 400px;
   }
 }
 @media (max-width: 767px) {
