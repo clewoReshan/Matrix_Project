@@ -5,14 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Matrix Reviealer</title>
+    <title>Matrix</title>
     <link rel="icon" href="img/logo_white.png">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-
     <script src="https://kit.fontawesome.com/6e8a2ac668.js" crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-HS6r7ie0J5yfnjJIGT+E0spXaJhGFBV3OviCvB9eWR/hPX5kD2ikOhOww3OjcvLp/JdMnjmtz/GVXoy/ANwjJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-GvkJ1TyTBkXwqfKxG2l3mKF6G4Lp1X7IzViC8X+zhrngR9vD2Ij2KDMt+GzQMc66yKuK6Lb8LE1vjXDvIuwhXw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
@@ -36,7 +33,6 @@
             </div>
         </div>
     </div>
-
     {{-- content --}}
     <div class="content">
         @yield('content')
@@ -49,7 +45,8 @@
                 <img src="{{ asset('img/logo_white.png') }}" alt="Matrix Logo">
             </div>
             <div class="content_container_footer">
-                <span class="footerContent">Matrix is where your imagination and our expertise converge to create design solutions
+                <span class="footerContent">Matrix is where your imagination and our expertise converge to create design
+                    solutions
                     that elevate your brand and set you apart from the competition.</span>
                 <span class="email_footer">hello@matrix.com</span>
                 <span class="phone_footer">+1-800-123 4567</span>
@@ -73,6 +70,7 @@
             <span class="mobile_copyrights">Copyright © 2023 Matrix®. All rights reserved.</span>
         </div>
     </div>
+
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
@@ -98,6 +96,7 @@
                     }
                 });
             }
+
         });
 
 
@@ -127,6 +126,7 @@
                 }
             });
         });
+
 
 
         function animateIntersections(className) {
@@ -159,6 +159,7 @@
                 observer.observe(block);
             });
         }
+
         animateIntersections('.animationsGlobal_Herizontal_left');
         animateIntersections('.animationsGlobal_Herizontal_right');
         animateIntersections('.animationsGlobal_Vertical');

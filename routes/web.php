@@ -13,9 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('client.home');
-});
-Route::get('/portfolio', function () {
-    return view('client.portfolio');
-});
+Route::view('/', 'client.home')->name('home');
+Route::view('/about', 'client.about')->name('about');
+Route::view('/portfolio', 'client.portfolio')->name('portfolio');
