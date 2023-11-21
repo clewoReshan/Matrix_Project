@@ -1,0 +1,70 @@
+.portfolio_hero {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    padding: 60px 0 80px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .heroTitle {
+        font-size: 70px;
+        font-weight: 700;
+        line-height: 80px;
+        text-align: left;
+    }
+}
+
+.portfolio_wrapper {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .title_portfolio {
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 60px;
+        text-align: center;
+        color: #000000CC;
+    }
+
+    .portfolio_navSlider {
+        width: 50%;
+        margin: auto;
+        padding: 40px 0 80px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: center;
+
+        .navSlide {
+            padding: 8px 24px;
+            border-radius: 100px;
+            border: 1px solid #0000004D;
+            color: #000000E5;
+
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 18px;
+            text-align: left;
+
+            &.active,
+            &:hover {
+                background: #000;
+                color: #fff;
+                border: 1px solid black;
+                transition: all 0.2s ease-in-out;
+            }
+        }
+    }
+
+    .portfolio_content {
+        .cardContainer__portfolio {
+            .portfolio_card {}
+        }
+    }
+}
