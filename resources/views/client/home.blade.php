@@ -27,7 +27,7 @@
         <li class="box animationsGlobal_Vertical" data-delay="300">
             <div class="question">
                 <p class="question__text">Graphic Design</p>
-                <i class="fa-solid fa-angle-down icon"></i>
+                <i class="bi bi-chevron-down icon"></i>
             </div>
             <div class="answer">
                 <p class="answer__text">Your brand is more than just a logo; it's the essence of your business. We create compelling brand identities that tell your unique story and resonate with your target audience.</p>
@@ -38,7 +38,7 @@
         <li class="box animationsGlobal_Vertical" data-delay="400">
             <div class="question">
                 <p class="question__text">Creative Campaign</p>
-                <i class="fa-solid fa-angle-down icon"></i>
+                <i class="bi bi-chevron-down icon"></i>
             </div>
             <div class="answer">
                 <p class="answer__text">Your brand is more than just a logo; it's the essence of your business. We create compelling brand identities that tell your unique story and resonate with your target audience.</p>
@@ -49,7 +49,7 @@
         <li class="box animationsGlobal_Vertical" data-delay="500">
             <div class="question">
                 <p class="question__text">UI/UX Design</p>
-                <i class="fa-solid fa-angle-down icon"></i>
+                <i class="bi bi-chevron-down icon"></i>
             </div>
             <div class="answer">
                 <p class="answer__text">Your brand is more than just a logo; it's the essence of your business. We create compelling brand identities that tell your unique story and resonate with your target audience.</p>
@@ -60,7 +60,7 @@
         <li class="box animationsGlobal_Vertical" data-delay="600">
             <div class="question">
                 <p class="question__text">Development</p>
-                <i class="fa-solid fa-angle-down icon"></i>
+                <i class="bi bi-chevron-down icon"></i>
             </div>
             <div class="answer">
                 <p class="answer__text">Your brand is more than just a logo; it's the essence of your business. We create compelling brand identities that tell your unique story and resonate with your target audience.</p>

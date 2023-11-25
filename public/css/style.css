@@ -96,6 +96,21 @@
   border: 1px solid #fff;
 }
 
+.btn_custom {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  color: #fff !important;
+  text-decoration: none;
+  background-color: #000 !important;
+}
+
 .animationsGlobal_Vertical {
   opacity: 0;
   transform: translateY(100px);

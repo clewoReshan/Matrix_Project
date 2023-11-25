@@ -7,14 +7,21 @@ use Exception;
 use Illuminate\Validation\Rule as ValidationRule;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 
 class UserController extends Controller
 {
+    public function userDashboard(Request $request)
+    {
+        $loginId = $request->session()->get('LoginId');
+        $user = User::where(['id' => $loginId, 'status' => 1,])->first();
+        return view('users.dashboard', ['user' => $user]);
+    }
 
     public function registerUser(Request $request)
     {
         try {
-
             $request->validate([
                 'name' => 'required',
                 'email' => 'required|email|unique:users,email',
@@ -28,16 +35,19 @@ class UserController extends Controller
                 'password' => bcrypt($request->input('password')),
                 'status' => 1,
             ]);
-
             $user->save();
+
+            $request->Session()->put('LoginId', $user->id);
+            $request->Session()->put('UserType', 2);
+
             $responseData = ['success' => true, 'message' => 'Registration Successful'];
             Session()->flash('success', 'Registration Successful');
-            
+
             if ($request->ajax()) {
                 return response()->json($responseData);
             } else {
                 Session()->flash('success', $responseData['message']);
-                return redirect('/portfolio');
+                return redirect('/user/dashboard');
             }
         } catch (ValidationException $e) {
             $responseData = ['success' => false, 'errors' => $e->errors()];
@@ -47,7 +57,7 @@ class UserController extends Controller
         if ($request->ajax()) {
             return response()->json($responseData, 422);
         } else {
-            return redirect('/about')->withErrors($responseData['errors'])->withInput();
+            return redirect('/')->withErrors($responseData['errors'])->withInput();
         }
     }
 }

@@ -19,12 +19,13 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick-theme.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    
+
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
     <!-- bootstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 
     <!-- izitoast -->
     <link rel="stylesheet" href="iziToast.min.css">
@@ -32,16 +33,42 @@
 
 <body>
     {{-- header --}}
+    <style>
+        .menu {
+            display: none;
+        }
+
+        .nav_text_container {
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-group {
+            margin-left: 20px;
+        }
+    </style>
     <div class="navbar">
         <div class="navContentWrapper">
-            <div class="img">
+            <div class="img_logo">
                 <img src="{{ asset('img/Logo.png') }}" alt="Matrix Logo">
             </div>
-            <div class="nav_text">
-                <a href="{{ route('home') }}" class="call">Schedule a Call</a>
-                <button class="btn call" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Login</button>
+            <div class="nav_text_container">
+                <a class="dropdown-item disabled" aria-disabled="true">{{$user->name}}</a>
+                <div class="btn-group">
+                    <button type="button" class="btn_custom dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="../../img/avatar.png" alt="" class="avatar dropDownTrigger">
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Orders</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="{{route('logout')}}">Log out</a></li>
+                    </ul>
+                </div>
                 <span class="menu">
-                    <i class="fa-solid fa-bars"></i>
+                    <i class="bi bi-list"></i>
                 </span>
             </div>
         </div>
@@ -72,6 +99,7 @@
         </ul>
     </div>
     @endif
+
     {{-- content --}}
     <div class="content">
         @yield('content')
@@ -101,30 +129,8 @@
     {{-- footer --}}
     <div class="footer">
         <div class="footer_container_main">
-            <div class="logo_footer">
-                <img src="{{ asset('img/logo_white.png') }}" alt="Matrix Logo">
-            </div>
             <div class="content_container_footer">
-                <span class="footerContent">Matrix is where your imagination and our expertise converge to create design solutions
-                    that elevate your brand and set you apart from the competition.</span>
-                <span class="email_footer">hello@matrix.com</span>
-                <span class="phone_footer">+1-800-123 4567</span>
                 <span class="desktop_copyrights">Copyright © 2023 Matrix®. All rights reserved.</span>
-            </div>
-            <div class="abouts_footer">
-                <div class="pages">
-                    <span>Home</span>
-                    <span>Services</span>
-                    <span>Portfolio</span>
-                    <span>Schedule a Call</span>
-                </div>
-                <div class="platforms">
-                    <span>Facebook</span>
-                    <span>Twitter</span>
-                    <span>LinkedIn</span>
-                    <span>Instergram</span>
-                    <span>Dribble</span>
-                </div>
             </div>
             <span class="mobile_copyrights">Copyright © 2023 Matrix®. All rights reserved.</span>
         </div>

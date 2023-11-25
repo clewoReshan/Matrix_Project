@@ -26,9 +26,7 @@
 
     <!-- bootstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
-    <!-- izitoast -->
-    <link rel="stylesheet" href="iziToast.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 </head>
 
 <body>
@@ -45,12 +43,30 @@
 
                 <a href="{{ route('portfolio') }}" class="pages {{ request()->routeIs('portfolio') ? 'active' : '' }}">Portfolio</a>
 
+                @if (Session()->has('LoginId'))
+                <div class="btn-group">
+                    <button type="button" class="btn_custom dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="../../img/avatar.png" alt="" class="avatar dropDownTrigger">
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item disabled" aria-disabled="true">Name</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Orders</a></li>
+                        <li><a class="dropdown-item" href="#">Go to console</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="{{route('logout')}}">Log out</a></li>
+                    </ul>
+                </div>
+                @else
                 <a href="{{ route('home') }}" class="call">Schedule a Call</a>
-
-                <button class="btn call" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Login</button>
-
+                <button class="btn call" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight_login" aria-controls="offcanvasRight_login">Login</button>
+                @endif
                 <span class="menu">
-                    <i class="fa-solid fa-bars"></i>
+                    <i class="bi bi-list"></i>
                 </span>
             </div>
         </div>
@@ -99,11 +115,30 @@
                 <input type="password" name="password" class="form-control my-1" placeholder="Passowrd">
                 <input type="password" name="confirm_password" class="form-control my-1" placeholder="Confirm Passowrd">
                 <div id="errorContainer"></div>
-                <button type="button" id="submitBtn" class="loginBtns_primary my-1">sign up</button>
+                <button type="button" id="submitBtn_register" class="loginBtns_primary my-1">sign up</button>
             </form>
-            <p class=" my-1">Already have an account ?</p>
+            <p class=" my-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight_login" aria-controls="offcanvasRight_login" style="cursor: pointer;">Already have an account ?</p>
             <a href="#" class="loginBtns_inverted my-1">Sign up with Google</a>
             <a href="#" class="loginBtns_inverted my-1">Sign up with Facebook</a>
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight_login" aria-labelledby="offcanvasRightLabel_login">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel_login">Sign In</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <form id="loginForm" action="{{ route('login'); }}" class="authform" method="post">
+                @csrf
+                <input type="email" name="email" class="form-control my-1" placeholder="Email">
+                <input type="password" name="password" class="form-control my-1" placeholder="Passowrd">
+                <div id="errorContainer_login"></div>
+                <button type="submit" id="submitBtn_login" class="loginBtns_primary my-1">sign in</button>
+            </form>
+            <p class=" my-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="cursor: pointer;">Create account ?</p>
+            <a href="#" class="loginBtns_inverted my-1">Sign in with Google</a>
+            <a href="#" class="loginBtns_inverted my-1">Sign in with Facebook</a>
         </div>
     </div>
 
@@ -139,13 +174,10 @@
         </div>
     </div>
 
-    <!-- izitoast -->
-    <script src="iziToast.min.js" type="text/javascript"></script>
-
     <!-- user registration -->
     <script>
         $(document).ready(function() {
-            $('#submitBtn').on('click', function(e) {
+            $('#submitBtn_register').on('click', function(e) {
                 e.preventDefault();
                 $('#errorContainer').html('');
                 var formData = $('#registrationForm').serialize();
@@ -157,7 +189,7 @@
                     dataType: 'json',
                     success: function(response) {
                         if (response.success) {
-                            window.location.href = '/portfolio';
+                            window.location.href = '/user/dashboard';
                         }
                     },
                     error: function(xhr) {
@@ -169,6 +201,43 @@
                             });
                         } else {
                             $('#errorContainer').html('<p>Error Occured</p>');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- user login -->
+    <script>
+        $(document).ready(function() {
+            $('#submitBtn_login').on('click', function(e) {
+                e.preventDefault();
+                $('#errorContainer_login').html('');
+                var formData = $('#loginForm').serialize();
+
+                $.ajax({
+                    type: 'POST',
+                    url: '{{ route("login") }}',
+                    data: formData,
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response.success) {
+                            window.location.href = '/user/dashboard';
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        if (xhr.status === 422) {
+                            if (xhr.responseJSON && !xhr.responseJSON.success) {
+                                $('#errorContainer_login').html(xhr.responseJSON.message);
+                            }
+                            var errors = xhr.responseJSON.errors;
+
+                            $.each(errors, function(key, value) {
+                                $('#errorContainer_login').append('<p>' + value[0] + '</p>');
+                            });
+                        } else {
+                            $('#errorContainer_login').html('<p>Error Occurred</p>');
                         }
                     }
                 });
