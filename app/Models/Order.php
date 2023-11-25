@@ -5,18 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Order extends Model
 {
     use HasFactory;
-
-    protected $table = 'users';
+    protected $table = 'orders';
 
     protected $fillable = [
         'id',
-        'user_types_id',
-        'password',
-        'name',
-        'email',
+        'users_id',
+        'services_posts_id',
+        'price',
+        'order_status',
+        'pay_status',
         'status',
+        'created_at',
+        'updated_at'
     ];
 }

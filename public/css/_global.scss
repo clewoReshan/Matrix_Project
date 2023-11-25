@@ -50,6 +50,56 @@
 }
 
 
+.loginBtns_primary {
+    width: 100%;
+    outline: none;
+    border: none;
+    background: #000000;
+    color: #fff;
+    border-radius: 4px;
+    padding: 8px 10px;
+    border: 1px solid #000000;
+    transition: all 0.5s ease-in-out;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 26px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.loginBtns_inverted {
+    width: 100%;
+    outline: none;
+    border: none;
+    background: #ffffff;
+    color: #000000;
+    border-radius: 4px;
+    padding: 8px 10px;
+    border: 1px solid #000000;
+    transition: all 0.5s ease-in-out;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 26px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.loginBtns_primary:hover {
+    background-color: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+}
+
+.loginBtns_inverted:hover {
+    background-color: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+    border: 1px solid #fff;
+}
+
+
 //animations
 .animationsGlobal_Vertical {
     opacity: 0;
@@ -87,6 +137,17 @@
     transition: all 1s ease-in-out;
 }
 
+//login / signup offcanvas
+.offcanvas-body {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.authform {
+    width: 100%;
+}
 
 // nav bar
 .navbar {
@@ -139,6 +200,40 @@
             display: none;
         }
     }
+}
+
+.alert.alert-danger,
+.alert.alert-success {
+    width: fit-content;
+    backdrop-filter: blur(13px);
+    position: fixed;
+    z-index: 100;
+    top: 10%;
+    right: 1%;
+
+    ul {
+        list-style: none;
+    }
+}
+
+.alert.alert-danger {
+    background: #ffa0a01f;
+    border: 1px solid #e1dfdf;
+    color: #a00;
+}
+
+#errorContainer {
+    color: #ec0000;
+}
+
+.alert.alert-success {
+    background: rgb(129 232 131 / 12%);
+    border: 1px solid #c1ffd4;
+    color: #053b00;
+}
+
+#sucessMessage {
+    display: none;
 }
 
 // footer

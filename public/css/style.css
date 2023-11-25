@@ -47,6 +47,55 @@
   border: 1px solid #fff;
 }
 
+.loginBtns_primary {
+  width: 100%;
+  outline: none;
+  border: none;
+  background: #000000;
+  color: #fff;
+  border-radius: 4px;
+  padding: 8px 10px;
+  border: 1px solid #000000;
+  transition: all 0.5s ease-in-out;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 26px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.loginBtns_inverted {
+  width: 100%;
+  outline: none;
+  border: none;
+  background: #ffffff;
+  color: #000000;
+  border-radius: 4px;
+  padding: 8px 10px;
+  border: 1px solid #000000;
+  transition: all 0.5s ease-in-out;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 26px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.loginBtns_primary:hover {
+  background-color: #ffffff;
+  color: #000000;
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.loginBtns_inverted:hover {
+  background-color: #000000;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+  border: 1px solid #fff;
+}
+
 .animationsGlobal_Vertical {
   opacity: 0;
   transform: translateY(100px);
@@ -81,6 +130,17 @@
   opacity: 1;
   transform: translateX(0px);
   transition: all 1s ease-in-out;
+}
+
+.offcanvas-body {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.authform {
+  width: 100%;
 }
 
 .navbar {
@@ -125,6 +185,42 @@
   text-decoration: none;
 }
 .navbar .nav_text .menu {
+  display: none;
+}
+
+.alert.alert-danger,
+.alert.alert-success {
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-backdrop-filter: blur(13px);
+          backdrop-filter: blur(13px);
+  position: fixed;
+  z-index: 100;
+  top: 10%;
+  right: 1%;
+}
+.alert.alert-danger ul,
+.alert.alert-success ul {
+  list-style: none;
+}
+
+.alert.alert-danger {
+  background: rgba(255, 160, 160, 0.1215686275);
+  border: 1px solid #e1dfdf;
+  color: #a00;
+}
+
+#errorContainer {
+  color: #ec0000;
+}
+
+.alert.alert-success {
+  background: rgba(129, 232, 131, 0.12);
+  border: 1px solid #c1ffd4;
+  color: #053b00;
+}
+
+#sucessMessage {
   display: none;
 }
 

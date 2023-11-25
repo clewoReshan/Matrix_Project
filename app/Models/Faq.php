@@ -5,18 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Faq extends Model
 {
     use HasFactory;
-
-    protected $table = 'users';
+    protected $table = 'faqs';
 
     protected $fillable = [
         'id',
-        'user_types_id',
-        'password',
-        'name',
-        'email',
+        'services_posts_id',
+        'question',
+        'answer',
         'status',
+        'created_at',
+        'updated_at'
     ];
 }

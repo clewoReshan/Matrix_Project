@@ -5,18 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Main_Category extends Model
 {
     use HasFactory;
-
-    protected $table = 'users';
+    protected $table = 'main_categories';
 
     protected $fillable = [
         'id',
-        'user_types_id',
-        'password',
-        'name',
-        'email',
+        'main_categories_name',
+        'username',
         'status',
+        'created_at',
+        'updated_at'
     ];
 }

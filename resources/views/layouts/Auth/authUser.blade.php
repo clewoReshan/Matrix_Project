@@ -5,13 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Matrix Reviealer</title>
+    <title>Matrix Reviealer - Dashboard</title>
     <link rel="icon" href="img/logo_white.png">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/8401e5ee3b.js" crossorigin="anonymous"></script>
-
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-HS6r7ie0J5yfnjJIGT+E0spXaJhGFBV3OviCvB9eWR/hPX5kD2ikOhOww3OjcvLp/JdMnjmtz/GVXoy/ANwjJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-GvkJ1TyTBkXwqfKxG2l3mKF6G4Lp1X7IzViC8X+zhrngR9vD2Ij2KDMt+GzQMc66yKuK6Lb8LE1vjXDvIuwhXw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -20,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick-theme.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
+    
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
@@ -39,16 +38,8 @@
                 <img src="{{ asset('img/Logo.png') }}" alt="Matrix Logo">
             </div>
             <div class="nav_text">
-                <a href="{{ route('home') }}" class="pages {{ request()->routeIs('home') ? 'active' : '' }}">Home</a>
-
-                <a href="{{ route('about') }}" class="pages {{ request()->routeIs('about') ? 'active' : '' }}">About Us</a>
-
-                <a href="{{ route('portfolio') }}" class="pages {{ request()->routeIs('portfolio') ? 'active' : '' }}">Portfolio</a>
-
                 <a href="{{ route('home') }}" class="call">Schedule a Call</a>
-
                 <button class="btn call" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Login</button>
-
                 <span class="menu">
                     <i class="fa-solid fa-bars"></i>
                 </span>

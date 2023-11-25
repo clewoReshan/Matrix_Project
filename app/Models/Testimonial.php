@@ -5,18 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Testimonial extends Model
 {
     use HasFactory;
-
-    protected $table = 'users';
+    protected $table = 'testimonials';
 
     protected $fillable = [
         'id',
-        'user_types_id',
-        'password',
-        'name',
-        'email',
+        'images_id',    
+        'title',    
+        'descreption',
         'status',
+        'created_at',
+        'updated_at'
     ];
 }

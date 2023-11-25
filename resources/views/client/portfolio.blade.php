@@ -75,10 +75,10 @@
 
         $('.mobileSlidingNav').slick({
             dots: false,
-            infinite: true,
             autoplay: false,
             slidesToShow: 2,
             centerMode: false,
+            infinite: true,
             variableWidth: true,
             cssEase: 'ease-in-out',
             arrows: false

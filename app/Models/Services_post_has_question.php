@@ -5,18 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Services_post_has_question extends Model
 {
     use HasFactory;
-
-    protected $table = 'users';
+    protected $table = 'services_posts_has_questions';
 
     protected $fillable = [
         'id',
-        'user_types_id',
-        'password',
-        'name',
-        'email',
+        'services_posts_id',	
+        'questions_id',
         'status',
+        'created_at',
+        'updated_at'
     ];
 }

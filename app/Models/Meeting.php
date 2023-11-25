@@ -5,18 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Meeting extends Model
 {
     use HasFactory;
-
-    protected $table = 'users';
+    protected $table = 'meetings';
 
     protected $fillable = [
         'id',
-        'user_types_id',
-        'password',
-        'name',
-        'email',
+        'date_time',
+        'reserve_status',
         'status',
+        'created_at',
+        'updated_at'
     ];
 }
